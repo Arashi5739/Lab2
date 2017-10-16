@@ -1,0 +1,33 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<include file="struts-default.xml"/>
+<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+<package name="pac" extends="struts-default">
+	<action name="SearchAuthor" class="pac.SearchAuthor">
+		<result name="success">/title.jsp</result>
+		<result name="error">/titleerror.jsp</result>
+	</action>
+	<action name="Print" class="pac.SelectSql">
+		<result name="success">/all.jsp</result>
+		<result name="error">/error.jsp</result>
+	</action>
+	<action name="Delete" class="pac.SelectSql" method="delete">
+		<result name="success">/all.jsp</result>
+		<result name="error">/error.jsp</result>
+	</action>
+	<action name="Select" class="pac.Select">
+		<result name="success">/message.jsp</result>
+		<result name="error">/error.jsp</result>
+	</action>
+	<action name="index">
+		<result>/index.jsp</result>
+	</action>
+	<action name="search">
+		<result>/search.jsp</result>
+	</action>
+</package>
+
+</struts>
